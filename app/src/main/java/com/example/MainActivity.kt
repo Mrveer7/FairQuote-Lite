@@ -36,6 +36,7 @@ import com.example.ui.screens.HomeScreen
 import com.example.ui.screens.QuoteBuilderScreen
 import com.example.ui.theme.MyApplicationTheme
 import com.example.viewmodel.FairQuoteViewModel
+import com.google.android.gms.ads.MobileAds
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -46,6 +47,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        try {
+            MobileAds.initialize(this) {}
+        } catch (_: Exception) {
+        }
         setContent {
             val viewModel: FairQuoteViewModel = viewModel()
             MyApplicationTheme(themeMode = viewModel.currentThemeMode) {

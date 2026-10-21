@@ -45,6 +45,7 @@ import com.example.logic.QuoteCalculator
 import com.example.model.AppThemeMode
 import com.example.model.Currency
 import com.example.model.QuoteInputState
+import com.example.ui.components.AdMobBanner
 import com.example.ui.components.CurrencySelector
 import com.example.ui.components.ThemeSelector
 
@@ -355,7 +356,14 @@ fun HomeScreen(
             }
         )
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Google AdMob Banner Advertisement
+        AdMobBanner(
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
     }
 }
 
